@@ -96,7 +96,6 @@ namespace gloo
         int new_socket;
         struct sockaddr_in client_address;
         socklen_t addr_len = sizeof(client_address);
-        std::cout << "server fd: <" << server_fd_.get() << ">" << std::endl;
         new_socket = accept(server_fd_.get(), (struct sockaddr *)&client_address, &addr_len);
         if (new_socket < 0)
         {

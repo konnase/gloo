@@ -40,7 +40,7 @@ namespace gloo
             IBV_ACCESS_LOCAL_WRITE | IBV_ACCESS_REMOTE_WRITE);
         auto end_time = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
-        std::cout << "ibv_reg_mr duration: " << duration.count() << " microseconds" << std::endl;
+        // std::cout << "ibv_reg_mr duration: " << duration.count() << " microseconds" << std::endl;
 
         // Provide hint if the error is EFAULT and nv_peer_mem is not loaded
         if (mr_ == nullptr && errno == EFAULT)
